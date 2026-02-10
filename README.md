@@ -1,0 +1,2 @@
+# nais
+Nginx Autoindex Skin
