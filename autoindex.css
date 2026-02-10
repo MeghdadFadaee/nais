@@ -1,0 +1,192 @@
+/* =========================
+   Nginx AutoIndex Theme
+   ========================= */
+
+:root {
+    --bg: #0f111a;
+    --bg-soft: #151926;
+    --row-hover: #1f2440;
+    --text: #e6e6eb;
+    --muted: #8b93a7;
+    --accent: #7aa2f7;
+    --folder: #9ece6a;
+    --parent: #f7768e;
+    --border: #2a2f4a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f111a, #121626);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue",
+                 Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Title */
+h1 {
+    margin: 0;
+    padding: 18px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Listing container */
+pre {
+    margin: 0;
+    padding: 12px 0 24px;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+/* Make links feel like rows */
+pre a {
+    display: inline-block;
+    padding: 8px 24px 8px 44px;
+    position: relative;
+
+    color: var(--accent);
+    text-decoration: none;
+
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* Hover & focus = full-row highlight */
+pre a:hover,
+pre a:focus-visible {
+    background: var(--row-hover);
+    color: #ffffff;
+    outline: none;
+}
+
+/* Parent directory */
+pre a[href="../"] {
+    color: var(--parent);
+    font-weight: 600;
+}
+
+/* Folders */
+pre a[href$="/"] {
+    color: var(--folder);
+    font-weight: 600;
+}
+
+/* === Icons (pure CSS, no emoji) === */
+pre a::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    background: var(--accent);
+    opacity: 0.85;
+}
+
+/* Folder icon */
+pre a[href$="/"]::before {
+    background: var(--folder);
+}
+
+/* Parent directory icon */
+pre a[href="../"]::before {
+    background: var(--parent);
+}
+
+/* Footer note */
+pre::after {
+    content: "— nginx autoindex —";
+    display: block;
+    margin: 24px 24px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Scrollbar (WebKit only, safe) */
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+/* Mobile improvements */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 16px;
+        padding: 14px 16px;
+    }
+
+    pre a {
+        padding: 10px 16px 10px 40px;
+        font-size: 13px;
+    }
+
+    pre a::before {
+        left: 16px;
+    }
+}
+
+/* ===== Header actions ===== */
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Button container */
+.autoindex-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons */
+.ai-btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Hover */
+.ai-btn:hover {
+    background: var(--row-hover);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* Active */
+.ai-btn:active {
+    transform: translateY(1px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .ai-btn {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+}
