@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f111a">
+    <meta name="description" content="NAIS gives nginx autoindex a clean, modern interface with one-command setup.">
+    <meta property="og:title" content="NAIS - Nginx Autoindex Skin">
+    <meta property="og:description" content="A modern, lightweight interface for nginx autoindex.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://meghdadfadaee.github.io/nais/favicon.png">
+    <title>NAIS - Nginx Autoindex Skin</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./landing.css">
+    <script src="./landing.js" defer></script>
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="./" aria-label="NAIS home">
+            <img src="./favicon.png" alt="" width="42" height="42">
+            <span>NAIS</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#install">Install</a>
+            <a class="github-link" href="https://github.com/meghdadfadaee/nais">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow"><span></span> Nginx autoindex, refined</div>
+                <h1>Your files.<br><strong>Better presented.</strong></h1>
+                <p class="hero-text">
+                    NAIS turns the default nginx directory listing into a fast,
+                    focused, and modern file browser without changing how nginx works.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#install">Install NAIS</a>
+                    <a class="button button-secondary" href="https://github.com/meghdadfadaee/nais">
+                        View source
+                    </a>
+                </div>
+                <div class="quick-command">
+                    <code>curl -fsSL https://meghdadfadaee.github.io/nais/setup.sh | sh</code>
+                    <button class="copy-button" type="button" data-copy-command aria-label="Copy install command">
+                        <span class="copy-label">Copy</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-wrap" id="preview" aria-label="Preview of the NAIS file browser">
+                <div class="preview-glow" aria-hidden="true"></div>
+                <div class="browser">
+                    <div class="browser-bar">
+                        <div class="traffic-lights" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="address"><span class="lock">⌁</span> files.example.com/releases/</div>
+                        <span class="browser-menu" aria-hidden="true">•••</span>
+                    </div>
+                    <div class="file-header">
+                        <span>Index of /releases/</span>
+                        <div>
+                            <button type="button">Copy Links</button>
+                            <button type="button">Download Playlist</button>
+                        </div>
+                    </div>
+                    <div class="file-list">
+                        <a class="parent" href="#preview"><span class="file-icon"></span>../</a>
+                        <a class="folder" href="#preview"><span class="file-icon"></span>archive/</a>
+                        <a class="folder" href="#preview"><span class="file-icon"></span>latest/</a>
+                        <a href="#preview"><span class="file-icon"></span>nais-v1.2.0.zip</a>
+                        <a href="#preview"><span class="file-icon"></span>checksums.txt</a>
+                        <a href="#preview"><span class="file-icon"></span>release-notes.pdf</a>
+                        <p>— nginx autoindex —</p>
+                    </div>
+                </div>
+                <div class="status-pill"><span></span> Lightweight. No framework.</div>
+            </div>
+        </section>
+
+        <section class="metrics" aria-label="Project highlights">
+            <div><strong>3</strong><span>small assets</span></div>
+            <div><strong>1</strong><span>install command</span></div>
+            <div><strong>0</strong><span>runtime dependencies</span></div>
+            <div><strong>100%</strong><span>nginx native</span></div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="section-heading">
+                <span class="section-kicker">Why NAIS</span>
+                <h2>A directory listing people can actually use.</h2>
+                <p>Small additions that make browsing and sharing files noticeably better.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card feature-card-wide">
+                    <span class="feature-number">01</span>
+                    <div class="feature-visual rows-visual" aria-hidden="true">
+                        <span class="pink"></span><span class="green"></span><span class="green short"></span><span class="blue"></span>
+                    </div>
+                    <h3>Clear at a glance</h3>
+                    <p>Folders, parent navigation, and files use distinct colors so every directory is easy to scan.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-number">02</span>
+                    <div class="feature-icon link-icon" aria-hidden="true"></div>
+                    <h3>Copy every link</h3>
+                    <p>Collect all file URLs from the current directory with one click.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-number">03</span>
+                    <div class="feature-icon play-icon" aria-hidden="true"></div>
+                    <h3>Build playlists</h3>
+                    <p>Export media links as a ready-to-open playlist directly from the listing.</p>
+                </article>
+                <article class="feature-card feature-card-wide install-card">
+                    <span class="feature-number">04</span>
+                    <div class="terminal-mini" aria-hidden="true">
+                        <div><i></i><i></i><i></i></div>
+                        <code><b>$</b> curl ... | sh</code>
+                        <code><b>✓</b> NAIS configured successfully.</code>
+                    </div>
+                    <h3>Setup that respects nginx</h3>
+                    <p>The installer detects common layouts, validates with <code>nginx -t</code>, and restores prior configuration if anything fails.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section install-section" id="install">
+            <div class="install-copy">
+                <span class="section-kicker">Get started</span>
+                <h2>From default to polished in one command.</h2>
+                <p>
+                    Run the installer, answer four short prompts, and NAIS handles
+                    the assets, nginx configuration, validation, and reload.
+                </p>
+                <ul class="check-list">
+                    <li>HTTP or optional HTTPS configuration</li>
+                    <li>Automatic nginx include detection</li>
+                    <li>Safe validation and rollback</li>
+                </ul>
+            </div>
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <div aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p>install nais</p>
+                    <button type="button" data-copy-command><span class="copy-label">Copy</span></button>
+                </div>
+                <pre><span class="prompt">$</span> curl -fsSL https://meghdadfadaee.github.io/nais/setup.sh | sh
+
+<span class="muted">Server name:</span> files.example.com
+<span class="muted">Root path:</span> /srv/files
+<span class="muted">Assets path:</span> /var/www/nais-assets
+<span class="muted">Certificates path (optional):</span>
+
+<span class="success">✓</span> Downloading NAIS assets...
+<span class="success">✓</span> Validating nginx configuration...
+<span class="success">✓</span> NAIS configured successfully.</pre>
+            </div>
+        </section>
+
+        <section class="cta">
+            <img src="./favicon.png" alt="" width="56" height="56">
+            <h2>Make the simple thing look good.</h2>
+            <p>A focused autoindex theme, built from plain CSS and JavaScript.</p>
+            <a class="button button-primary" href="https://github.com/meghdadfadaee/nais">Explore on GitHub</a>
+        </section>
+    </main>
+
+    <footer>
+        <a class="brand footer-brand" href="./">
+            <img src="./favicon.png" alt="" width="34" height="34">
+            <span>NAIS</span>
+        </a>
+        <p>Nginx Autoindex Skin</p>
+        <a href="https://github.com/meghdadfadaee/nais">GitHub</a>
+    </footer>
+</body>
+</html>
